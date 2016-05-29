@@ -19,7 +19,7 @@ public class Server {
 			boolean flag = false;
 			while (true) {
 				so = sc.accept();
-				System.out.println("Escuchado desde : " + so.getPort());
+				System.out.println("Escuchado desde : " + so.getRemoteSocketAddress());
 				System.out.println("Un cliente se ha conectado.");
 //				entrada = new BufferedReader(new InputStreamReader(so.getInputStream()));
 //				salida = new DataOutputStream(so.getOutputStream());

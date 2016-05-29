@@ -3,7 +3,7 @@ import java.net.*;
 import java.io.*;
 
 public class Client {
-	final String HOST = "10.203.163.27";
+	final String HOST = "192.168.43.238";
 	final int PUERTO = 5000;
 	Socket sc;
 	DataOutputStream mensaje;
