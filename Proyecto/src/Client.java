@@ -3,50 +3,22 @@ import java.net.*;
 import java.io.*;
 
 public class Client {
-
 	final String HOST = "localhost";
-
 	final int PUERTO = 5000;
-
 	Socket sc;
-
 	DataOutputStream mensaje;
-
 	DataInputStream entrada;
 
-	public void initClient() /* ejecuta este metodo para correr el cliente */
+	public void initClient() {
+		try {
 
-	{
-
-		try
-
-		{
-
-			sc = new Socket(HOST, PUERTO); /*
-											 * conectar a un servidor en
-											 * localhost con puerto 5000
-											 */
-
-			// creamos el flujo de datos por el que se enviara un mensaje
-
+			sc = new Socket(HOST, PUERTO);
 			mensaje = new DataOutputStream(sc.getOutputStream());
-
-			// enviamos el mensaje
-
 			mensaje.writeUTF("hola que tal!!");
-
-			// cerramos la conexión
-
 			sc.close();
-
-		} catch (Exception e)
-
-		{
-
+		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
-
 		}
-
 	}
 
 }
