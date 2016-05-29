@@ -27,6 +27,7 @@ public class Server {
 			salida.writeUTF("Se recibio tu mensaje.n Terminando conexion...");
 			salida.writeUTF("Gracias por conectarte, adios!");
 			System.out.println("Cerrando conexión...");
+			System.out.println("asdsad");
 			sc.close();// Aqui se cierra la conexión con el cliente
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
