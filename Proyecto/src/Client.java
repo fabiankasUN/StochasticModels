@@ -3,7 +3,7 @@ import java.net.*;
 import java.io.*;
 
 public class Client {
-	final String HOST = "localhost";
+	final String HOST = "10.203.163.27";
 	final int PUERTO = 5000;
 	Socket sc;
 	DataOutputStream mensaje;
@@ -19,6 +19,7 @@ public class Client {
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 		}
+
 	}
 
 }
