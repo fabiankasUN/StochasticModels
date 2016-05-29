@@ -11,7 +11,6 @@ public class Client {
 
 	public void initClient() {
 		try {
-
 			sc = new Socket(HOST, PUERTO);
 			mensaje = new DataOutputStream(sc.getOutputStream());
 			mensaje.writeUTF("hola que tal!!");
@@ -19,7 +18,10 @@ public class Client {
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 		}
-
 	}
-
+	
+	public static void main( String args[] ){
+		Client client = new Client();
+		client.initClient();
+	}
 }
