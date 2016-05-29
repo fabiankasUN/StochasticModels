@@ -16,25 +16,27 @@ public class Server {
 			sc = new ServerSocket(PUERTO);
 			so = new Socket();
 			System.out.println("Esperando una conexión:");
-			so = sc.accept();
-			System.out.println("Un cliente se ha conectado.");
-			entrada = new BufferedReader(new InputStreamReader(so.getInputStream()));
-			salida = new DataOutputStream(so.getOutputStream());
-			System.out.println("Confirmando conexion al cliente....");
-			salida.writeUTF("Conexión exitosa...n envia un mensaje :D");
-			mensajeRecibido = entrada.readLine();
-			System.out.println(mensajeRecibido);
-			salida.writeUTF("Se recibio tu mensaje.n Terminando conexion...");
-			salida.writeUTF("Gracias por conectarte, adios!");
-			System.out.println("Cerrando conexión...");
-			System.out.println("asdsad");
-			sc.close();// Aqui se cierra la conexión con el cliente
+			boolean flag = false;
+			while (true) {
+				so = sc.accept();
+				System.out.println("Escuchado desde : " + so.getPort());
+				System.out.println("Un cliente se ha conectado.");
+//				entrada = new BufferedReader(new InputStreamReader(so.getInputStream()));
+//				salida = new DataOutputStream(so.getOutputStream());
+//				System.out.println("Confirmando conexion al cliente....");
+//				salida.writeUTF("Conexión exitosa...n envia un mensaje :D");
+//				mensajeRecibido = entrada.readLine();
+//				System.out.println(mensajeRecibido);
+//				salida.writeUTF("Se recibio tu mensaje.n Terminando conexion...");
+//				salida.writeUTF("Gracias por conectarte, adios!");
+//				System.out.println("Cerrando conexión...");
+				if(flag)
+					sc.close();// Aqui se cierra la conexión con el cliente
+			}
 		} catch (Exception e) {
 			System.out.println("Error: " + e.getMessage());
 		}
-
 	}
-
 	public static void main(String args[]) {
 		Server c = new Server();
 		c.initServer();
